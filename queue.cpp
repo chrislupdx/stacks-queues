@@ -43,13 +43,13 @@
     }
     
     //Case 2: 1 item (in the event it points to itself)
-    else if(rear->next == rear) 
+    else if(rear->next == rear) //NEEDS CHECKING
     {   
         temp->next = rear;
         rear->next = temp;
     }
     //Case 3: More items (+1)
-    else 
+    else //NEEDS CHECKIN
     {
         address * hold = rear->next; //hold onto  the end
         rear->next = new address; //create a new node
