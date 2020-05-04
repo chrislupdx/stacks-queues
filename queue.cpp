@@ -29,16 +29,17 @@
     //This function puts data onto the rear of the queue
     int queue::enqueue(const address & address_toadd ) //This function puts data into the rear of the queue.
     {
-    //Guard Case: Is full 
+    //Guard Case: Is full ?
         
     //copy address_toadd into temp
     address * temp = new address;                   
     temp->addressStr = address_toadd.addressStr;        //make a new node + copy the parm into it
  
     //Case 1: Empty Queue (if null)
-    if(rear == nullptr)
+    if(rear == nullptr)//how else to say if its empty
     {
-        rear->next = temp; 
+        rear = temp; 
+        rear->next = rear;
     }
     
     //Case 2: 1 item (in the event it points to itself)
@@ -46,18 +47,30 @@
     {   
         temp->next = rear;
         rear->next = temp;
-    
     }
     //Case 3: More items (+1)
     else 
     {
-    address * temp = rear->next; 
-    rear->next = new address;
-    rear = rear->next;
-    rear->next = temp;
+        address * hold = rear->next; //hold onto  the end
+        rear->next = new address; //create a new node
+        rear = rear->next; //move to the new node
+        rear->next = hold; //
     }
     
     return 1;
+    }
+
+    //returns 1 if empty 0 if not
+    int queue::isEmpty()
+    {
+    if(rear == nullptr ) //is that the only condition
+        {
+        return 1;
+        }
+    else
+    {
+        return 0; //else
+    }
     }
 //int dequeue(const address &); //This function removes data 
 //off the front of the queue.

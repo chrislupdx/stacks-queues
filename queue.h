@@ -19,7 +19,7 @@ class queue
     //int dequeue(const address &); //This function removes data 
                                     //off the front of the queue.
 	
-    //isEmpty();                //Returns 1 if the queue is empty.
+    int isEmpty();                //Returns 1 if the queue is empty.
 	//isFull();                 //Returns 1 if the queue is full.
     
     //int peek(address &);      //Returns the top of the queue by reference
