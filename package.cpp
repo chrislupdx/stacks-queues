@@ -57,6 +57,15 @@ int package::display()
     return 1;
 }
 
+//erases the contents of the package
+int package::clean()
+{
+    this->sender = nullptr;
+    this->id = 0;
+    this->deliveryInfo = nullptr;
+
+    return 1;
+}
 
 //destroy
 //displayj

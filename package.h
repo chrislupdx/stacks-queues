@@ -15,8 +15,11 @@ struct package
    
     int create(int id, char * sender, char * deliveryInfo);
     //new char strlen//strcpy
+   
+    //at this level, pop is rest
+    int clean(); 
     
-    //destroy
+    
     int display();
     //copypackNode() //copy the parm or?
     
