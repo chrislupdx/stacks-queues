@@ -6,10 +6,9 @@
 //comprised of a main node which have in it as a member, a linear linked list.
 //arrNodes should possess five nodes. We can 
 
-#include "mainNode.h"
-#include "arrNode"
+#include "arrNode.h"
 
-class stack()
+class stack
 {
     public:
  
@@ -51,11 +50,11 @@ class stack()
     //int displayStack(); 
    
     
-    private;
+    private:
     arrNode * top;//where does logic for counting go
     //top represents how full the front node is
     //every other node(but the 1st) will have a completely full array
     
 
     //if no nodes or if current node is full, create new arrNode
-}
+};

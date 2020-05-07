@@ -10,9 +10,12 @@
 
 struct package
 {
-    //packNode(){};
-    //~packNode();
-    //create //new char strlen//strcpy
+     package();
+    ~package();
+   
+    int create(int id, char * sender, char * deliveryInfo);
+    //new char strlen//strcpy
+    
     //destroy
     //displayj
     //copypackNode()
@@ -20,4 +23,4 @@ struct package
     char * sender;
     int id;
     char * deliveryInfo;
-}
+};

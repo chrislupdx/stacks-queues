@@ -2,9 +2,16 @@
 #include "queue.h"
 #include "stack.h"
 #include <cstring>
+#include "package.h"
+
+
 int main()
 {
     //stack stack;
+    //int pack_id = 0;
+    //char sender[20];
+    //char delivery[20];
+    package Apackage;
     queue address_queue;
     address new_address; //double free error
     address delAddress;
@@ -15,10 +22,10 @@ int main()
         << endl << "#1: Add an address to the end of the delivery list:"
         << endl << "#2: Remove an address from the front of the delivery list:"
         << endl << "0 to Exit" << endl;
-        cout << "pick another option: " << endl; 
-        cin >> choice;
-        cin.ignore(100, '\n'); 
-   do{
+    cout << "pick another option: " << endl; 
+    cin >> choice;
+    cin.ignore(100, '\n'); 
+    do{
         if(choice == 1)
         {
             cout << "#1: Add an address to the delivery list" << endl;
@@ -29,16 +36,43 @@ int main()
             strcpy(new_address.addressStr, addressName);
             //new_address.addressStr = addressName; //the customer still isn't handling nodes directly
             //populate a package struct -> as 2nd arg into enqueueue
-            
+            bool packageDone = false; 
+            int pack_id = 0;
+            char sender[20];
+            char delivery[20];
+            do
+            {
+               cout << "Add a package" << endl;
+               cout << "ID?" << endl;
+               cin >> pack_id;
+               cout << endl << "sender? " << endl;
+               cin >> sender;
+               cout << endl << "delivery info ? " << endl;
+               cin >> delivery;
+               
+               Apackage.create(pack_id, sender, delivery);
+                
+               cout << "Create another package? (y/n) " << endl;
+               char answer;
+               cin >> answer;
+               if (answer == 'n')
+               {
+                   packageDone = true;
+               }
+               //else packageDone = false;
+            }
+            while(packageDone == false);
+
+
             address_queue.enqueue(new_address); 
             cout << "The queue: " << address_queue.displayQueue(); 
             cout << "Front of the queue: " << address_queue.peek(peekAdd) << endl;
             cout << endl << "#1: Add another address:"
-            << endl << "#2: Remove an address from the delivery list:"
-            << endl << "0 to Exit" << endl;
-            
+                << endl << "#2: Remove an address from the delivery list:"
+                << endl << "0 to Exit" << endl;
+
             //address_queue.peek(peekAdd); 
-           
+
             cout << "pick another option: " << endl;
             cin >> choice;
             cin.ignore(100, '\n'); //AQUI
@@ -48,20 +82,20 @@ int main()
         {
             cout << "#2: Remove an address from the front of the delivery list:" << endl;
             //address delAddress; //the address default construct borks here
-            
+
             address_queue.dequeue(delAddress);
             cout << "Deleted " << delAddress.addressStr << endl;
-            cout << "The queue: " << address_queue.displayQueue()
-            cout << "Front of the queue: " << address_queue.peek(peekAdd) << endl 
-            << endl << "#1: Add another address:"
-            << endl << "#2: Remove an address from the delivery list:"
-            << endl << "0 to Exit" << endl;
-            
+            cout << "The queue: " << address_queue.displayQueue();
+            cout << "Front of the queue: " << address_queue.peek(peekAdd) << endl
+                << endl << "#1: Add another address:"
+                << endl << "#2: Remove an address from the delivery list:"
+                << endl << "0 to Exit" << endl;
+
             cin >> choice;
             cin.ignore(100, '\n');
         }
-   }
-   while(choice != 0);
-   cout << "Exiting" << endl;
+    }
+    while(choice != 0);
+    cout << "Exiting" << endl;
     return 1;
 }

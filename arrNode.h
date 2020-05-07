@@ -6,18 +6,18 @@
 //packages at once.  While packNodes are written into,
 //arrNodes are the simplest unit of movement (with regards to enqueue and dequeue)
 
-#include "package"
+//#include "package.h"
 
 struct arrNode
 {
     //arrNode();
     //~arrNode();
    //maybe a display 
-    package * packList;
+    //package * packList;
    
     //produce 5 empty packnodes upon requisition 
 
     arrNode * nextArr;
 
 
-}
+};
