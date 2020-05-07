@@ -51,8 +51,8 @@ int main()
                cin >> delivery;
                
                Apackage.create(pack_id, sender, delivery);
-                
-               cout << "Create another package? (y/n) " << endl;
+               Apackage.display();        
+               cout << endl << "Create another package? (y/n) " << endl;
                char answer;
                cin >> answer;
                if (answer == 'n')

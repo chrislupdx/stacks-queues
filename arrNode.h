@@ -13,7 +13,7 @@ struct arrNode
     //arrNode();
     //~arrNode();
    //maybe a display 
-    //package * packList;
+   // package * packList;
    
     //produce 5 empty packnodes upon requisition 
 

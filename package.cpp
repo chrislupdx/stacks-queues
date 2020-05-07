@@ -9,7 +9,7 @@
 //be the same length
 #include "package.h"
 #include <cstring>
-
+#include <iostream> //huh
 
 //This is the default constructor
 package::package()
@@ -47,7 +47,17 @@ int package::create(int id_toadd, char * sender_toadd, char * deliveryInfo_toadd
 return 1;
 }
 
-//create //new char strlen//strcpy
+//couts package info
+int package::display()
+{
+    std::cout << "id: " << this->id << std::endl;
+    std::cout << "sender: " << this->sender << std::endl;
+    std::cout << "delivery: " << this->deliveryInfo << std::endl;
+
+    return 1;
+}
+
+
 //destroy
 //displayj
 //copypackNode()

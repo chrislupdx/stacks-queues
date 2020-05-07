@@ -17,8 +17,8 @@ struct package
     //new char strlen//strcpy
     
     //destroy
-    //displayj
-    //copypackNode()
+    int display();
+    //copypackNode() //copy the parm or?
     
     char * sender;
     int id;
