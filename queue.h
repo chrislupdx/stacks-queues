@@ -12,19 +12,22 @@ class queue
     public:
     queue(); //This is the default constructor.
 	~queue(); //This is the default destructor;
-	
+    int deleteAll(address *& rear); //Recursive delete all 
+
+    //will need to accomodate queueNode Structs
     int enqueue(const address &); //This function puts data 
                                     //into the rear of the queue.
-	
-    //int dequeue(const address &); //This function removes data 
+
+
+    //will need to accomdate queueNode structs 
+    int dequeue(address &);         //This function removes data 
                                     //off the front of the queue.
-	
-    int isEmpty();                //Returns 1 if the queue is empty.
-	//isFull();                 //Returns 1 if the queue is full.
-    
-    //int peek(address &);      //Returns the top of the queue by reference
-	//int displayQueue();           //Hopefully it prints from 
-    
+                                    //Address is a copy of the item dq-ed
+    int peek(address &);      //Returns the top of the queue by reference
+	int displayQueue();           //Hopefully it prints from 
+    int displayAll(address * rear);    
+    //int copyAddress(address & address_toadd);    
+
     private:
 	address * rear; 
 };
