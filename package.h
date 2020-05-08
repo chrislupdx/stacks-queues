@@ -18,7 +18,8 @@ struct package
    
     //at this level, pop is rest
     int clean(); 
-    
+
+    int copyPackage(package *& package_toadd);
     
     int display();
     //copypackNode() //copy the parm or?
@@ -26,4 +27,6 @@ struct package
     char * sender;
     int id;
     char * deliveryInfo;
+
+
 };

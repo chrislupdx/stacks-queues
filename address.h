@@ -7,7 +7,7 @@
 //used by the circular linked list data structure that the 
 //queue 
 
-using namespace std;
+//using namespace std;
 #include <iostream>
 #include <cstddef>
 

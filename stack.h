@@ -11,50 +11,32 @@
 class stack
 {
     public:
- 
-  //Default constructor
-  //stack();
 
-  //Destructor 
-  //~stack();
+        //Default constructor
+        stack();
 
-    int count = 0;
-  //int push(); //assuming max = 5
-    //c1: empty
-    //create a new arraynode 
-    //create a new array of arraynode size
-    //packList[0].copypackNode(arraynode[fromabv]) (this is what pushing is)
-    //increment top index (it should be + 1)
+        //Destructor 
+        ~stack();
 
-    //c2: not empty+have room 
-    //if(top < 5) we have rom in the arrNode
-    //see above for push logic
-    //(see27) (then usetopindx instead of 0)
+        int deleteAll(arrNode *& top);
 
-  //int pop();
- 
-    //c3: 1 left (check this one first)
-  //c1: (not removing the last thing)
-    //if topindex(!0) 
-    //topindex--
- 
-    //c2: empty
-    //cout byby
-   
-    
-    //int peek();
-    //c1 empty
-    //c2 thing
-    
-    
-    //int displayStack(); 
-   
-    
+        int push(package * package_toadd); 
+        int pop(package *& popped);
+
+        //c3: 1 left (check this one first)
+        //c1: (not removing the last thing)
+        //if topindex(!0) 
+        //topindex--
+
+        //c2: empty
+        //cout byby
+
+        //int peek();
+        //c1 empty
+        //c2 thing
+        //int displayStack(); 
+
     private:
-    arrNode * top;//where does logic for counting go
-    //top represents how full the front node is
-    //every other node(but the 1st) will have a completely full array
-    
-
-    //if no nodes or if current node is full, create new arrNode
+        int topIndex = 0;
+        arrNode * top;//where does logic for counting go
 };

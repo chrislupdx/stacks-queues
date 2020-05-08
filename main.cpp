@@ -2,15 +2,13 @@
 #include "queue.h"
 #include "stack.h"
 #include <cstring>
-#include "package.h"
-
+using namespace std;
+#include <iostream>
+//#include <cstddef>
 
 int main()
 {
-    //stack stack;
-    //int pack_id = 0;
-    //char sender[20];
-    //char delivery[20];
+    stack stack;
     package Apackage;
     queue address_queue;
     address new_address; //double free error
@@ -34,8 +32,11 @@ int main()
             cin.ignore(100, '\n');
             new_address.addressStr = new char(strlen(addressName) + 1);
             strcpy(new_address.addressStr, addressName);
+           
             //new_address.addressStr = addressName; //the customer still isn't handling nodes directly
             //populate a package struct -> as 2nd arg into enqueueue
+    
+            
             bool packageDone = false; 
             int pack_id = 0;
             char sender[20];
@@ -59,10 +60,9 @@ int main()
                {
                    packageDone = true;
                }
-               //else packageDone = false;
+               //else packageDone = false; //not sure if needed yet
             }
             while(packageDone == false);
-
 
             address_queue.enqueue(new_address); 
             cout << "The queue: " << address_queue.displayQueue(); 

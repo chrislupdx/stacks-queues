@@ -16,7 +16,7 @@ queue::~queue()
 {
     if(!rear) return;
     address * thing = rear->next;
-    rear->next = NULL;
+    rear->next = nullptr;
     deleteAll(thing);
 
 } //This is the default destructor; //do we want it to be a wrapper?
@@ -123,7 +123,7 @@ int queue::peek(address & peak)
     {
         char * frontAddress = rear->addressStr;
         peak.addressStr = frontAddress;
-        std::cout<<peak.addressStr<<endl;
+        std::cout << peak.addressStr << std::endl;
         return 1;
     }
     //c3 +1 
@@ -131,7 +131,7 @@ int queue::peek(address & peak)
     {  
         char * frontAddress = rear->next->addressStr;
         peak.addressStr = frontAddress;
-        std::cout<<peak.addressStr<<endl;
+        std::cout<<peak.addressStr<<std::endl;
         return 1;
     } 
     return 1;
@@ -140,7 +140,7 @@ int queue::peek(address & peak)
 int queue::displayAll(address * rear)
 {
     if(this->rear == rear) return 0; 
-    std::cout << "DISPLAYALL" << endl; 
+    std::cout << "DISPLAYALL" << std::endl; 
     std::cout << rear->addressStr << "," ;
     displayAll(rear->next);
     return 1;

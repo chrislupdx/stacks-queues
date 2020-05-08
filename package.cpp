@@ -43,7 +43,6 @@ int package::create(int id_toadd, char * sender_toadd, char * deliveryInfo_toadd
    
     id = id_toadd;
 
-
 return 1;
 }
 
@@ -60,11 +59,29 @@ int package::display()
 //erases the contents of the package
 int package::clean()
 {
-    this->sender = nullptr;
-    this->id = 0;
+   delete [] this->sender;
+   this->sender = nullptr;
+  
+   this->id = 0;
+   
+   delete [] this->deliveryInfo;
     this->deliveryInfo = nullptr;
 
     return 1;
+}
+
+//THERE ARE NO GUARD STATEMENTS IN THIS FUNCTION
+int package::copyPackage(package *& package_toadd)
+{
+   sender = new char[strlen(package_toadd->sender) + 1];
+   strcpy(sender, package_toadd->sender);
+
+   id = package_toadd->id;
+   
+   deliveryInfo = new char[strlen(package_toadd->deliveryInfo) + 1];
+   strcpy(deliveryInfo, package_toadd->deliveryInfo);
+   
+   return 1;
 }
 
 //destroy
